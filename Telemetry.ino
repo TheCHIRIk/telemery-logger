@@ -26,7 +26,7 @@ void loop() {
   File dataFile = SD.open("log.txt", FILE_WRITE);
   if (dataFile) {
     unsigned long time = millis();
-    dataFile.println(time + ": A: " + String(bmp.readAltitude()) + "m + P: " + String(bmp.readPressure()) + "T: " + String(bmp.readTemperature()) + "°");
+    dataFile.println(round(time/100)/10 + ": A: " + String(bmp.readAltitude()) + "m + P: " + String(bmp.readPressure()) + "T: " + String(bmp.readTemperature()) + "°");
     dataFile.close();
     delay(100); // Частота записи показаний датчика 1000=1сек
   } else {

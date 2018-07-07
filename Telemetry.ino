@@ -20,6 +20,13 @@ void setup() {
     return;
   }
   Serial.println("card initialized.");
+  File dataFile = SD.open("log.txt", FILE_WRITE);
+  if (dataFile) {
+    dataFile.println('Init completed! Proceeding to logging...\n\n\n\n\n\n');
+  } else {
+    Serial.println("error opening DATALOG.txt");
+    return;
+  }
 }
 
 void loop() {

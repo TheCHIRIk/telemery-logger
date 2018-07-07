@@ -35,7 +35,6 @@ void loop() {
     unsigned long time = millis();
     dataFile.println(round(time/100)/10 + ": A: " + String(bmp.readAltitude()) + "m + P: " + String(bmp.readPressure()) + "T: " + String(bmp.readTemperature()) + "°");
     dataFile.close();
-    delay(100); // Частота записи показаний датчика 1000=1сек
   } else {
     Serial.println("error opening DATALOG.txt");
   }

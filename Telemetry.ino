@@ -23,6 +23,7 @@ void setup() {
   File dataFile = SD.open("log.txt", FILE_WRITE);
   if (dataFile) {
     dataFile.println('Init completed! Proceeding to logging...\n\n\n\n\n\n');
+    Serial.println('Init completed! Proceeding to logging in dataFile.');
   } else {
     Serial.println("error opening DATALOG.txt");
     return;
